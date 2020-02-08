@@ -1,0 +1,6 @@
+@mixin shadow {
+    box-shadow: -6px -6px 9px $shadocolor1, 6px 6px 9px rgba($shadocolor2, 0.4);
+  }
+@mixin shadow-inset {
+    box-shadow: inset -6px -6px 9px $shadocolor1, inset 6px 6px 9px rgba($shadocolor2, 0.4);
+  }

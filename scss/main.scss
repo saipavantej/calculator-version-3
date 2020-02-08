@@ -1,0 +1,96 @@
+
+@import "_colours.scss";
+@import "_mixins.scss";
+@import "_fonts.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Dosis', sans-serif;
+}
+body {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color:$maincolor;
+    main {
+        @include shadow();
+        padding: 15px;
+        border-radius: 20px;
+        header {
+            position: relative;
+            text-align: right;
+            padding: 15px;
+            height: 50px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: solid  0.5px $secondcolor;
+            @include shadow-inset();
+        }
+    }
+}
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            grid-template-rows: repeat(5,50px);
+            grid-gap: 10px 10px;
+            margin: 5px;
+            justify-content: center;
+        }
+
+        button {
+            border: none;
+            border-radius: 15px;
+            background-color: $maincolor;
+           @include shadow();
+            outline: none;
+            font-size: 20px;
+            &:hover,&:active {
+                font-size: 30px;
+                color: black;
+                font-weight: 100;
+            }
+            &:active{
+                @include shadow-inset();
+                font-size: 20px;
+            }
+
+        }
+        .fun-key{
+            color: $secondcolor;
+        &:hover,&:active{
+            font-size: 30px;
+            color:$secondcolor;
+            font-weight: 100;
+        }
+        &:active{
+            font-size: 20px;
+        }
+        }
+        .span{
+            grid-column: span 3;
+        }
+        .display{
+            position: absolute;
+            animation: displaymovement 3s;
+            right: 20px;
+            font-family: 'Dosis', sans-serif;
+            letter-spacing: 5px;
+            word-break: break-word;
+            width: 200px;
+        }
+        @keyframes displaymovement{
+            from{
+                transform: translateX(-120px);
+                opacity: 0;
+            }
+
+            to{
+                transform: translate(0);
+            }
+        }
+        
